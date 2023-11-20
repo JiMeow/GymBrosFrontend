@@ -14,12 +14,14 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/material": "^5.14.18",
     "@mui/material-next": "^6.0.0-alpha.110",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.6",
     "@phosphor-icons/react": "^2.0.14",
     "@t3-oss/env-nextjs": "^0.7.0",
     "next": "^14.0.0",
     "next-auth": "^4.24.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^6.1.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {

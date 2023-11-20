@@ -21,7 +21,8 @@ export default function Home() {
           <Button
             variant="contained"
             endIcon={<PaperPlaneRight />}
-            className="mt-10 w-fit bg-black text-white "
+            className="mt-10 w-fit bg-black text-white"
+            sx={{ "&:hover": { backgroundColor: "#495E57" } }}
           >
             Getting Started
           </Button>

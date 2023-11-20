@@ -1,33 +1,71 @@
-import { Button, Typography } from "@mui/material";
+import { useIsVisible } from "@/hooks/useIsVisible";
+import { Button, Typography, styled } from "@mui/material";
 import { PaperPlaneRight } from "@phosphor-icons/react";
+import Image from "next/image";
+import { useRef } from "react";
+
 export default function Home() {
+  const refLandingPage = useRef(null);
+  const refWorkoutPlans = useRef(null);
+  const WorkoutVisible = useIsVisible(refWorkoutPlans);
+  console.log(WorkoutVisible);
   return (
     <>
-      <div className="h-full min-h-[100vh] bg-yellow-400 p-8 px-12">
-        <div className="flex h-full flex-col items-center justify-center sm:min-h-[100vh] ">
-          <Typography className="text-center text-lg font-bold sm:my-4 sm:text-5xl">
+      <div className="-z-50 h-full min-h-[100vh] bg-black">
+        <div
+          ref={refLandingPage}
+          className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 sm:min-h-[101vh]"
+        >
+          <Image
+            width={1920}
+            height={1080}
+            src="/images/bg2.jpg"
+            alt="GymBackground"
+            className="absolute left-0 top-0 z-[-1]  h-full w-full object-cover saturate-50 sm:block"
+          />
+          <StyledTypography className="text-center text-lg font-bold sm:my-4 sm:text-5xl">
             Welcome to GymBros
-          </Typography>
-          <Typography className="mt-4 text-center text-lg font-[500] sm:my-4 sm:text-3xl">
+          </StyledTypography>
+          <StyledTypography className="mt-4 text-center text-base font-[500] sm:my-4 sm:text-3xl">
             Start Your Fitness Journey with Us!
-          </Typography>
-          <Typography className="mt-4 indent-6 text-base sm:my-4 sm:w-[80%] sm:max-w-5xl sm:text-center sm:indent-0 sm:text-lg">
-            Discover tailor-made workout plans, expert guidance, and connect
-            with a supportive community committed to a healthier lifestyle.
-            Whether you{"'"}re a seasoned pro or a beginner, GymBros is your
-            ultimate fitness companion. Ready to transform? Let{"'"}s take the
-            first step together.
-          </Typography>
-          <Button
+          </StyledTypography>
+          <StyledButton
             variant="contained"
             endIcon={<PaperPlaneRight />}
             className="mt-10 w-fit bg-black text-white"
-            sx={{ "&:hover": { backgroundColor: "#495E57" } }}
+            // sx={{ "&:hover": { backgroundColor: "#495E57" } }}
           >
             Getting Started
-          </Button>
+          </StyledButton>
+        </div>
+        <div
+          ref={refWorkoutPlans}
+          className={`relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 text-white duration-[2s] sm:min-h-[101vh]
+            ${WorkoutVisible ? "scale-100" : "scale-50"}`}
+        >
+          {/* <Image
+            width={1920}
+            height={1080}
+            src="/images/LandingpageBackground.png"
+            alt="GymBackground"
+            className="absolute left-0 top-0 z-[-1]  h-full w-full object-cover saturate-50 sm:block"
+          /> */}
+          <StyledTypography className="text-center text-lg font-bold sm:my-4 sm:text-5xl">
+            Our Workout Plans
+          </StyledTypography>
         </div>
       </div>
     </>
   );
 }
+
+const StyledButton = styled(Button)(() => ({
+  ":hover": {
+    backgroundColor: "#495E57",
+  },
+  boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
+}));
+
+const StyledTypography = styled(Typography)(() => ({
+  textShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
+}));

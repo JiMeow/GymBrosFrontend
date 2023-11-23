@@ -23,6 +23,11 @@ const LandingPage = () => {
         variant="contained"
         endIcon={<PaperPlaneRight />}
         className="mt-10 w-fit bg-black text-white"
+        onClick={() => {
+          document
+            ?.getElementById("workout")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
         // sx={{ "&:hover": { backgroundColor: "#495E57" } }}
       >
         Getting Started

@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@media only screen and (max-width: 644px) {
+     ::-webkit-scrollbar {
+        height: 4px;
+        width: 12px;
+    }
+}
+
+@media only screen and (min-width: 645px) {
+     ::-webkit-scrollbar {
+        height: 8px;
+        width: 12px;
+    }
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    /* border: 3px solid black; */
+    /* creates padding around scroll thumb */
+}

@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({ title, description, image }) => {
           width={1000}
           height={1000}
           alt="Card"
-          className="h-full w-20 rounded-md border-2 border-black bg-gray-300 object-cover object-center sm:w-24"
+          className="h-full w-20 rounded-md border-2 border-black bg-gray-300 object-cover object-center p-1 sm:w-24"
         />
         <div className="flex w-24 flex-col items-center justify-center gap-1 sm:w-44 sm:gap-2">
           <Typography className="text-xs font-semibold sm:text-sm">

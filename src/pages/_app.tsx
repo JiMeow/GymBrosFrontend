@@ -1,6 +1,7 @@
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
+import { NextUIProvider } from "@nextui-org/react";
 
 import "@/styles/globals.css";
 import "@fontsource/roboto/300.css";
@@ -14,10 +15,12 @@ const MyApp: AppType<{ session: Session | null }> = ({
   pageProps: { session, ...pageProps },
 }) => {
   return (
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-      {process.env.NODE_ENV === "development" && <DevViewport />}
-    </SessionProvider>
+    <NextUIProvider>
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+        {process.env.NODE_ENV === "development" && <DevViewport />}
+      </SessionProvider>
+    </NextUIProvider>
   );
 };
 

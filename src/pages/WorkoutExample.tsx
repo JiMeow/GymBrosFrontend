@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Typography, styled } from "@mui/material";
 import Card from "@/components/Card";
 import { Button, ButtonGroup } from "@nextui-org/react";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 type activeButton = "3 Days" | "4 Days" | "5 Days";
 
@@ -32,6 +33,7 @@ const WorkoutExample = () => {
   ];
 
   const ref = useRef(null);
+  const [parent, enableAnimations] = useAutoAnimate();
   const WorkoutVisible = useIsVisible(ref);
   const [activeButton, setActiveButton] = useState<activeButton>("3 Days");
 
@@ -39,7 +41,7 @@ const WorkoutExample = () => {
     <div
       id="workout"
       ref={ref}
-      className={`relative z-10 flex justify-center p-8 transition-opacity duration-[3s] sm:min-h-[101vh]
+      className={`relative z-10 flex justify-center p-8 transition-[opacity] duration-[3s] sm:min-h-[101vh]
       ${WorkoutVisible ? " opacity-100" : " opacity-0"}`}
     >
       <div className="flex h-full w-full flex-col items-center gap-4 text-white sm:w-[75%] sm:gap-8">
@@ -77,7 +79,7 @@ const WorkoutExample = () => {
                 <Typography className="w-[80px] text-sm sm:w-24 sm:text-base">
                   {workout.day}
                 </Typography>
-                <div className="flex flex-1 gap-4 overflow-x-auto">
+                <div className="flex flex-1 gap-4 overflow-x-auto" ref={parent}>
                   {workout.exercises[activeButton].map((exercise, idx) => {
                     return (
                       <Card

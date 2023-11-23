@@ -33,7 +33,7 @@ const WorkoutExample = () => {
   ];
 
   const ref = useRef(null);
-  const [parent, enableAnimations] = useAutoAnimate();
+  const [parent] = useAutoAnimate();
   const WorkoutVisible = useIsVisible(ref);
   const [activeButton, setActiveButton] = useState<activeButton>("3 Days");
 

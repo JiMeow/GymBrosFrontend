@@ -9,7 +9,7 @@ const LandingPage = () => {
       <Image
         width={1920}
         height={1080}
-        src="/images/bg2.jpg"
+        src="/images/LandingpageBackground.jpg"
         alt="GymBackground"
         className="absolute left-0 top-0 z-[-1]  h-full w-full object-cover saturate-50 sm:block"
       />

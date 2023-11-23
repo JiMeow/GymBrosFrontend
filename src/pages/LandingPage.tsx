@@ -7,11 +7,11 @@ const LandingPage = () => {
   return (
     <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 sm:min-h-[101vh]">
       <Image
-        width={1920}
-        height={1080}
-        src="/images/LandingpageBackground.jpg"
+        width={3840}
+        height={2160}
+        src="/images/LandingpageBackground2.png"
         alt="GymBackground"
-        className="absolute left-0 top-0 z-[-1]  h-full w-full object-cover saturate-50 sm:block"
+        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover saturate-50 sm:block"
       />
       <StyledTypography className="text-center text-lg font-bold sm:my-4 sm:text-5xl">
         Welcome to GymBros

@@ -28,9 +28,6 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    /* color of the scroll thumb */
     border-radius: 20px;
-    /* roundness of the scroll thumb */
     /* border: 3px solid black; */
-    /* creates padding around scroll thumb */
 }

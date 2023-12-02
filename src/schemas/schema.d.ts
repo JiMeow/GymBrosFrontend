@@ -4,6 +4,78 @@
  */
 
 export interface paths {
+  "/auth/login": {
+    /** Login */
+    post: {
+      parameters: {
+        body: {
+          /** Login */
+          user: definitions["auth.LoginDto"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["auth.ReturnToken"];
+        };
+        /** Bad Request */
+        400: {
+          schema: unknown;
+        };
+      };
+    };
+  };
+  "/auth/logout": {
+    /** Logout */
+    post: {
+      responses: {
+        /** OK */
+        200: {
+          schema: string;
+        };
+        /** Bad Request */
+        400: {
+          schema: unknown;
+        };
+      };
+    };
+  };
+  "/auth/me": {
+    /** Get me */
+    get: {
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["user.User"];
+        };
+        /** Bad Request */
+        400: {
+          schema: unknown;
+        };
+      };
+    };
+  };
+  "/auth/register": {
+    /** Register */
+    post: {
+      parameters: {
+        body: {
+          /** Register */
+          user: definitions["auth.RegisterDto"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: {
+          schema: definitions["user.User"];
+        };
+        /** Bad Request */
+        400: {
+          schema: unknown;
+        };
+      };
+    };
+  };
   "/exercises": {
     /** Get all exercises */
     get: {
@@ -567,6 +639,21 @@ export interface paths {
 }
 
 export interface definitions {
+  "auth.LoginDto": {
+    email: string;
+    password: string;
+  };
+  "auth.RegisterDto": {
+    age: number;
+    email: string;
+    gender: string;
+    password: string;
+    username: string;
+  };
+  "auth.ReturnToken": {
+    exp?: number;
+    token?: string;
+  };
   "exercise.CreateExerciseDto": {
     description: string;
     image: string;
@@ -647,6 +734,7 @@ export interface definitions {
     activityLevel?: number;
     age: number;
     created_at?: string;
+    email: string;
     gender: string;
     /**
      * @description default:"0" is not working
@@ -699,6 +787,7 @@ export interface definitions {
     activitylevel?: number;
     age: number;
     created_at?: string;
+    email: string;
     gender: string;
     /**
      * @description default:"0" is not working
@@ -731,6 +820,8 @@ export interface definitions {
   };
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface operations {}
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface external {}

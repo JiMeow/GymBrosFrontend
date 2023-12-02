@@ -1,50 +1,37 @@
 import React from "react";
-import { Button, Typography, styled } from "@mui/material";
 import { PaperPlaneRight } from "@phosphor-icons/react";
 import Image from "next/image";
+import { Button } from "@nextui-org/react";
 
 const LandingPage = () => {
   return (
-    <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 sm:min-h-[101vh]">
+    <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 pb-[20vh] sm:min-h-[101vh]">
       <Image
         width={3840}
         height={2160}
         src="/images/LandingpageBackground2.png"
         alt="GymBackground"
-        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover saturate-50 sm:block"
+        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover opacity-50 saturate-50 sm:block"
       />
-      <StyledTypography className="text-center text-lg font-bold sm:my-4 sm:text-5xl">
+      <div className="al:text-4xl text-center text-lg font-[700] text-white sm:my-4 sm:text-6xl">
         Welcome to GymBros
-      </StyledTypography>
-      <StyledTypography className="mt-4 text-center text-base font-[500] sm:my-4 sm:text-3xl">
+      </div>
+      <div className="mt-4 text-base font-[400] text-white sm:my-4 sm:text-3xl">
         Start Your Fitness Journey with Us!
-      </StyledTypography>
-      <StyledButton
-        variant="contained"
-        endIcon={<PaperPlaneRight />}
-        className="mt-10 w-fit bg-black text-white"
+      </div>
+      <Button
+        endContent={<PaperPlaneRight />}
+        className="font-400 mt-5 w-fit bg-black p-6 text-white hover:bg-[#283934] sm:my-4 sm:text-2xl"
         onClick={() => {
           document
             ?.getElementById("workout")
             ?.scrollIntoView({ behavior: "smooth" });
         }}
-        // sx={{ "&:hover": { backgroundColor: "#495E57" } }}
       >
         Getting Started
-      </StyledButton>
+      </Button>
     </div>
   );
 };
 
 export default LandingPage;
-
-const StyledButton = styled(Button)(() => ({
-  ":hover": {
-    backgroundColor: "#495E57",
-  },
-  boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
-}));
-
-const StyledTypography = styled(Typography)(() => ({
-  textShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
-}));

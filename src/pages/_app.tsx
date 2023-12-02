@@ -3,6 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
 import { DM_Sans } from "next/font/google";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "@/styles/globals.css";
 import "@fontsource/roboto/300.css";
@@ -22,8 +23,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <main className={fonts.className}>
       <NextUIProvider>
         <SessionProvider session={session}>
-          <Component {...pageProps} />
-          {process.env.NODE_ENV === "development" && <DevViewport />}
+          <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+            {process.env.NODE_ENV === "development" && <DevViewport />}
+          </QueryClientProvider>
         </SessionProvider>
       </NextUIProvider>
     </main>
@@ -31,3 +34,5 @@ const MyApp: AppType<{ session: Session | null }> = ({
 };
 
 export default MyApp;
+
+export const queryClient = new QueryClient();

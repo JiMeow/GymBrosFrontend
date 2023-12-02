@@ -111,9 +111,12 @@ export type GetExerciseById =
 export type GetExerciseByIdResponse =
   paths["/exercises/{id}"]["get"]["responses"]["200"]["schema"];
 
-export const getExerciseById = async (): Promise<GetExerciseByIdResponse> => {
-  const { data } =
-    await axiosInstance.get<GetExerciseByIdResponse>(`/exercises/{id}`);
+export const getExerciseById = async (
+  params: GetExerciseById,
+): Promise<GetExerciseByIdResponse> => {
+  const { data } = await axiosInstance.get<GetExerciseByIdResponse>(
+    `/exercises/${params.id}`,
+  );
   return data;
 };
 

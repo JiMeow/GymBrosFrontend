@@ -7,7 +7,7 @@ type Props = {
 };
 
 const MockTableCell: React.FC<Props> = ({ id }) => {
-  const { data: exercise, error, isLoading } = useExerciseById({ id });
+  const { data: exercise } = useExerciseById({ id });
   console.log(id);
   return (
     <>

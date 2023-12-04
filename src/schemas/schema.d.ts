@@ -820,7 +820,3 @@ export interface definitions {
     weight?: number;
   };
 }
-
-export interface operations {}
-
-export interface external {}

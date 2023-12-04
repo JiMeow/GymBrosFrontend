@@ -1,7 +1,6 @@
-import { Typography } from "@mui/material";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoMdFitness } from "react-icons/io";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@nextui-org/react";
 
 const Navbar = () => {

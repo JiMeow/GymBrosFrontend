@@ -1,7 +1,6 @@
-import { useIsVisible } from "@/hooks/useIsVisible";
 import React from "react";
-import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
-import Table from "@/components/MockTable";
+import { Tabs, Tab } from "@nextui-org/react";
+import Table from "../Mocktable";
 
 const tabs = [
   {

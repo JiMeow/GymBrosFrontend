@@ -346,19 +346,19 @@ export const getPlanByUserDay = async (
 };
 
 export type UpdatePlanByUserDayPathParam =
-  paths["/plans/user/{user_id}/{day}"]["put"]["parameters"]["path"];
+  paths["/plans/{user_id}/{day}"]["put"]["parameters"]["path"];
 
 export type UpdatePlanByUserDayBodyParam =
-  paths["/plans/user/{user_id}/{day}"]["put"]["parameters"]["body"];
+  paths["/plans/{user_id}/{day}"]["put"]["parameters"]["body"];
 
 export type UpdatePlanByUserDayResponse =
-  paths["/plans/user/{user_id}/{day}"]["put"]["responses"]["200"]["schema"];
+  paths["/plans/{user_id}/{day}"]["put"]["responses"]["200"]["schema"];
 
 export const updatePlanByUserDay = async (
   params: UpdatePlanByUserDayPathParam & UpdatePlanByUserDayBodyParam,
 ): Promise<UpdatePlanByUserDayResponse> => {
   const { data } = await axiosInstance.put<UpdatePlanByUserDayResponse>(
-    `/plans/user/${params.user_id}/${params.day}`,
+    `/plans/${params.user_id}/${params.day}`,
     params,
   );
   return data;

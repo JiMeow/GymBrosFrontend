@@ -7,7 +7,7 @@ type Params = {
 
 export const useExerciseById = (params: Params) => {
   return useQuery({
-    queryKey: ["useExerciseById"],
+    queryKey: ["useExerciseById", params.id],
     queryFn: () => getExerciseById({ id: params.id }),
     enabled: !!params.id,
   });

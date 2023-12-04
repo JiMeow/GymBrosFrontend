@@ -377,7 +377,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["plans.Plan"];
+          schema: definitions["plans.Plan"][];
         };
         /** Bad Request */
         400: {
@@ -395,31 +395,6 @@ export interface paths {
           user_id: string;
           /** Day of week */
           day: string;
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["plans.Plan"];
-        };
-        /** Bad Request */
-        400: {
-          schema: unknown;
-        };
-      };
-    };
-    /** Update a plan by user and day */
-    put: {
-      parameters: {
-        path: {
-          /** User ID */
-          user_id: string;
-          /** Day of week */
-          day: string;
-        };
-        body: {
-          /** Update Plan */
-          plan: definitions["plans.UpdatePlanDto"];
         };
       };
       responses: {
@@ -507,6 +482,33 @@ export interface paths {
       responses: {
         /** No Content */
         204: never;
+        /** Bad Request */
+        400: {
+          schema: unknown;
+        };
+      };
+    };
+  };
+  "/plans/{user_id}/{day}": {
+    /** Update a plan by user and day */
+    put: {
+      parameters: {
+        path: {
+          /** User ID */
+          user_id: string;
+          /** Day of week */
+          day: string;
+        };
+        body: {
+          /** Update Plan */
+          plan: definitions["plans.UpdatePlanDto"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["plans.Plan"];
+        };
         /** Bad Request */
         400: {
           schema: unknown;
@@ -724,7 +726,6 @@ export interface definitions {
   "plans.UpdatePlanDto": {
     exercise?: string[];
     typeofplan?: string;
-    userid?: string;
   };
   "user.CreateUserDto": {
     /**
@@ -820,8 +821,6 @@ export interface definitions {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface operations {}
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface external {}

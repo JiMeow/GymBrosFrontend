@@ -7,7 +7,7 @@ type Params = {
 
 const useUserById = (params: Params) => {
   return useQuery({
-    queryKey: ["useUserById"],
+    queryKey: ["useUserById", params.id],
     queryFn: () => getUserById({ id: params.id }),
     enabled: !!params.id,
   });

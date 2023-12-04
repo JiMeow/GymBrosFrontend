@@ -7,7 +7,7 @@ type Params = {
 
 export const usePlanByUserId = (params: Params) => {
   return useQuery({
-    queryKey: ["usePlanByUserId"],
+    queryKey: ["usePlanByUserId", params.id],
     queryFn: () => getPlanByUserId({ user_id: params.id }),
     enabled: !!params.id,
   });

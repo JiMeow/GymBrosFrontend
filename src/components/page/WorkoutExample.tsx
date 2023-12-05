@@ -1,6 +1,6 @@
 import React from "react";
 import { Tabs, Tab } from "@nextui-org/react";
-import Table from "../Mocktable";
+import Table from "@/components/Mocktable";
 
 const tabs = [
   {

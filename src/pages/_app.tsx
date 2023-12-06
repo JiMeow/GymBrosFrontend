@@ -1,5 +1,4 @@
 import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
 import { DM_Sans } from "next/font/google";
@@ -22,12 +21,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <main className={fonts.className}>
       <NextUIProvider>
-        <SessionProvider session={session}>
-          <QueryClientProvider client={queryClient}>
-            <Component {...pageProps} />
-            {process.env.NODE_ENV === "development" && <DevViewport />}
-          </QueryClientProvider>
-        </SessionProvider>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+          {process.env.NODE_ENV === "development" && <DevViewport />}
+        </QueryClientProvider>
       </NextUIProvider>
     </main>
   );

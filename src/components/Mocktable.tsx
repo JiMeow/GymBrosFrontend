@@ -17,10 +17,10 @@ const Table: React.FC<Props> = ({ id }) => {
               className="flex flex-none flex-row items-center gap-1 sm:gap-4"
               key={item.id}
             >
-              <div className="text-sm sm:hidden sm:text-base">
+              <div className="w-10 flex-none text-sm sm:hidden sm:text-base">
                 {getDayShorthand(item?.dayofweek)}
               </div>
-              <div className="hidden text-sm sm:block sm:text-base">
+              <div className="hidden w-28 flex-none text-sm sm:block sm:text-base">
                 {item?.dayofweek}
               </div>
               <div className="flex flex-row gap-4 overflow-auto">

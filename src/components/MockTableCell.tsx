@@ -8,13 +8,12 @@ type Props = {
 
 const MockTableCell: React.FC<Props> = ({ id }) => {
   const { data: exercise } = useExerciseById({ id });
-  console.log(id);
   return (
     <>
       <Card
         title={exercise?.name ?? ""}
         description={exercise?.description ?? ""}
-        image={exercise?.image ?? ""}
+        image={exercise?.image}
       />
     </>
   );

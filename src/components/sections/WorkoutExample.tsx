@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 import Table from "@/components/MockTable";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 const tabs = [
   {
@@ -21,20 +22,26 @@ const tabs = [
 ];
 
 const WorkoutExample = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isWorkoutVisible = useIsVisible(ref);
+
   return (
-    <div>
-      <div className="m-auto flex h-full w-full flex-col items-center justify-center gap-4 text-white sm:w-[75vw] sm:gap-8">
-        <div className="mt-2 text-center text-lg font-bold sm:text-5xl">
-          Our Workout Plans
-        </div>
-        <Tabs aria-label="Dynamic tabs" items={tabs}>
-          {(item) => (
-            <Tab key={item.id} title={item.title}>
-              <Table id={item.content} />
-            </Tab>
-          )}
-        </Tabs>
+    <div
+      ref={ref}
+      className={`m-auto flex h-full w-full flex-col items-center justify-center gap-4 text-white transition-[opacity] duration-[3s] sm:w-[75vw] sm:gap-8 ${
+        isWorkoutVisible ? " opacity-100" : " opacity-0"
+      }`}
+    >
+      <div className="mt-12 text-center text-lg font-bold sm:text-5xl">
+        Our Workout Plans
       </div>
+      <Tabs aria-label="Dynamic tabs" items={tabs}>
+        {(item) => (
+          <Tab key={item.id} title={item.title}>
+            <Table id={item.content} />
+          </Tab>
+        )}
+      </Tabs>
     </div>
   );
 };

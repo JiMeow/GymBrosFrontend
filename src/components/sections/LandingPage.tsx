@@ -10,6 +10,7 @@ const LandingPage = () => {
         width={3840}
         height={2160}
         src="/images/LandingpageBackground2.png"
+        priority
         alt="GymBackground"
         className="absolute left-0 top-0 z-[-1] h-full w-full object-cover opacity-50 saturate-50 sm:block"
       />

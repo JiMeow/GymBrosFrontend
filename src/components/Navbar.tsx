@@ -13,7 +13,6 @@ const Navbar = () => {
       );
     });
   }, [opacity]);
-  console.log(opacity);
 
   return (
     <>

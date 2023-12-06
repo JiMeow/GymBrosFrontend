@@ -14,7 +14,6 @@ const config = {
         defaultLocale: "en",
     },
     images: {
-        domains: ['*'],
         remotePatterns: [{
             hostname: "**",
         }, ],

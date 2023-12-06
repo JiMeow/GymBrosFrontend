@@ -1,6 +1,6 @@
-import LandingPage from "../components/page/LandingPage";
-import Nutrients from "../components/page/Nutrients";
-import WorkoutExample from "../components/page/WorkoutExample";
+import LandingPage from "../components/sections/LandingPage";
+import Nutrients from "../components/sections/Nutrients";
+import WorkoutExample from "../components/sections/WorkoutExample";
 import Navbar from "../components/Navbar";
 
 export default function Home() {

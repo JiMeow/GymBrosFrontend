@@ -16,7 +16,7 @@ const fonts = DM_Sans({
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
-  pageProps: { session, ...pageProps },
+  pageProps: { ...pageProps },
 }) => {
   return (
     <main className={fonts.className}>

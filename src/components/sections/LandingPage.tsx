@@ -15,7 +15,7 @@ const LandingPage = () => {
         className="absolute left-0 top-0 z-[-1] h-full w-full object-cover opacity-50 saturate-50 sm:block"
       />
       <div className="al:text-4xl text-center text-lg font-[700] text-white sm:my-4 sm:text-6xl">
-        Welcome to GymBros
+        Welcome to GymsBro
       </div>
       <div className="mt-4 text-base font-[400] text-white sm:my-4 sm:text-3xl">
         Start Your Fitness Journey with Us!

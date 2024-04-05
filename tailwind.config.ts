@@ -12,6 +12,10 @@ export default {
       },
       gridTemplateRows: {
         '7': 'repeat(7, minmax(0, 1fr))',
+      },
+      colors: {
+        // 'gray' : "#878a92"
+        link: "#5551ff",
       }
     },
   },

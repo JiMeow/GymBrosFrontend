@@ -21,4 +21,7 @@ export default {
   },
   darkMode: "class",
   plugins: [nextui(), require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 } satisfies Config;

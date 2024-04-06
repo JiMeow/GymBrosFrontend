@@ -32,7 +32,7 @@ const Navbar = () => {
           <Button
             className="rounded-full bg-black px-2 py-2 text-white hover:bg-white hover:text-black"
             startContent={<IoMdFitness />}
-            onClick= {() => {
+            onClick={() => {
               void rounter.push("/login");
             }}
           >
@@ -41,7 +41,7 @@ const Navbar = () => {
           <Button
             className="rounded-full bg-black px-2 py-2 text-white hover:bg-white hover:text-black"
             startContent={<IoPersonCircleOutline />}
-            onClick= {() => {
+            onClick={() => {
               void rounter.push("/signup");
             }}
           >

@@ -2,8 +2,10 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { IoMdFitness } from "react-icons/io";
 import React, { useEffect, useState } from "react";
 import { Button } from "@nextui-org/react";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const rounter = useRouter();
   const [opacity, setOpacity] = useState(100);
 
   useEffect(() => {
@@ -30,12 +32,18 @@ const Navbar = () => {
           <Button
             className="rounded-full bg-black px-2 py-2 text-white hover:bg-white hover:text-black"
             startContent={<IoMdFitness />}
+            onClick= {() => {
+              void rounter.push("/login");
+            }}
           >
             Log In
           </Button>
           <Button
             className="rounded-full bg-black px-2 py-2 text-white hover:bg-white hover:text-black"
             startContent={<IoPersonCircleOutline />}
+            onClick= {() => {
+              void rounter.push("/signup");
+            }}
           >
             Sign up
           </Button>

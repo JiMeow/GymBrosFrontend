@@ -5,14 +5,14 @@ import { Button } from "@nextui-org/react";
 
 const LandingPage = () => {
   return (
-    <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 pb-[20vh] sm:min-h-[101vh]">
+    <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 pb-[20vh] min-h-[101vh]">
       <Image
         width={3840}
         height={2160}
         src="/images/LandingpageBackground2.png"
         priority
         alt="GymBackground"
-        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover opacity-50 saturate-50 sm:block"
+        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover opacity-50 saturate-50"
       />
       <div className="al:text-4xl text-center text-lg font-[700] text-white sm:my-4 sm:text-6xl">
         Welcome to GymsBro

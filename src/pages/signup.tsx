@@ -9,24 +9,24 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="-z-50 h-[100vh] rounded-sm bg-gray-200">
+      <div className="-z-50 h-[100vh] rounded-sm bg-base-200">
         <div className="flex h-full flex-col items-center justify-center gap-4">
           <div className="mb-4 text-3xl font-bold">Sign up for GymsBro</div>
 
           {/* continue with google button */}
-          <div className="flex h-12 w-[360px] cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-black bg-white font-bold text-neutral">
+          <div className="flex h-12 w-[360px] cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-base-content font-bold">
             <GoogleLogo size={24} color="#504e4e" weight="bold" />
             <div className="">Continue with Google</div>
           </div>
 
-          <div className="text-[#504e4e]">or</div>
+          <div className="">or</div>
 
           <input
-            className="h-12 w-[360px] rounded-md border-2 border-black pl-2"
+            className="h-12 w-[360px] rounded-md border-2 border-base-content pl-2"
             placeholder="Email"
           ></input>
           <input
-            className="mb-2 h-12 w-[360px] rounded-md border-2 border-black pl-2"
+            className="mb-2 h-12 w-[360px] rounded-md border-2 border-base-content pl-2"
             placeholder="Password"
           ></input>
 
@@ -34,29 +34,29 @@ export default function LoginPage() {
             <input
               type="checkbox"
               checked={checked}
-              className="solid checkbox border-2 border-black"
+              className="solid checkbox border-2 border-base-content"
               onChange={() => setChecked(!checked)}
             />
-            <div className="text-[#504e4e]">I agree to the join GymsBro</div>
+            <div className="">I agree to the join GymsBro</div>
           </div>
 
-          <div className="flex h-12 w-[360px] cursor-pointer items-center justify-center rounded-md border-2 border-black bg-black text-white">
+          <div className="flex h-12 w-[360px] cursor-pointer items-center justify-center rounded-md border-2 border-base-content bg-base-content font-bold text-base-100">
             Create account
           </div>
 
-          <div className="w-[360px] px-6 text-center text-xs text-[#504e4e]">
+          <div className="w-[360px] px-6 text-center text-xs ">
             {
               'By clicking "Create account" or "Continue with Google", you agree to join the GymsBro.'
             }
           </div>
 
-          <div className="text-[#504e4e]">
+          <div className="">
             {"Already have an account?"}
             <span
               onClick={() => {
                 void router.push("/login");
               }}
-              className="ml-2 cursor-pointer text-link hover:underline"
+              className="ml-2 cursor-pointer text-primary hover:underline"
             >
               Log in
             </span>

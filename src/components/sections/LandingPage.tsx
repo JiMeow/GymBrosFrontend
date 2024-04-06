@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 
 const LandingPage = () => {
   return (
-    <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 px-12 pb-[20vh] min-h-[101vh]">
+    <div className="relative z-10 flex h-full min-h-[101vh] flex-col items-center justify-center p-8 px-12 pb-[20vh]">
       <Image
         width={3840}
         height={2160}

@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "@/styles/globals.css";
 import DevViewport from "@/components/DevViewport";
 import { useEffect, useState } from "react";
+import ThemeController from "@/components/ThemeController";
 const fonts = DM_Sans({
   subsets: ["latin"],
 });
@@ -15,6 +16,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { ...pageProps },
 }) => {
+  const [theme, setTheme] = useState("light"); // ["dark", "light"]
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
@@ -25,10 +27,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <NextUIProvider>
         <QueryClientProvider client={queryClient}>
           {isClient && (
-            <html data-theme="cupcake">
-              <Component {...pageProps} />
-              {process.env.NODE_ENV === "development" && <DevViewport />}
-            </html>
+            <>
+              <html data-theme={theme} className="relative">
+                <ThemeController theme={theme} setTheme={setTheme} />
+                <Component {...pageProps} />
+                {process.env.NODE_ENV === "development" && <DevViewport />}
+              </html>
+            </>
           )}
           {!isClient && (
             <>

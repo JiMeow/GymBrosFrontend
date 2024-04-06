@@ -29,6 +29,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           {isClient && (
             <>
               <html data-theme={theme} className="relative">
+                {/* TODO: Make this layout better wih store*/}
                 <ThemeController theme={theme} setTheme={setTheme} />
                 <Component {...pageProps} />
                 {process.env.NODE_ENV === "development" && <DevViewport />}

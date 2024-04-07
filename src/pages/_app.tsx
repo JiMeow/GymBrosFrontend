@@ -5,9 +5,10 @@ import { DM_Sans } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "@/styles/globals.css";
-import DevViewport from "@/components/DevViewport";
+import DevViewport from "@/components/utils/DevViewport";
+import ThemeController from "@/components/utils/ThemeController";
 import { useEffect, useState } from "react";
-import ThemeController from "@/components/ThemeController";
+
 const fonts = DM_Sans({
   subsets: ["latin"],
 });

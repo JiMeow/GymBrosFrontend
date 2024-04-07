@@ -1,3 +1,4 @@
+import { pages } from "@/modules/pageConfig";
 import { GoogleLogo } from "@phosphor-icons/react";
 import { useRouter } from "next/router";
 
@@ -35,7 +36,7 @@ export default function LoginPage() {
             {"Don't have an account?"}
             <span
               onClick={() => {
-                void router.push("/signup");
+                void router.push(pages.register.path);
               }}
               className="ml-2 cursor-pointer text-primary hover:underline"
             >

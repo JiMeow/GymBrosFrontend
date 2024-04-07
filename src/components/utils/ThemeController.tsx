@@ -10,7 +10,7 @@ const ThemeController: React.FC<ThemeControllerProps> = ({
   setTheme,
 }) => {
   return (
-    <label className="swap swap-rotate absolute right-10 top-10">
+    <label className="swap swap-rotate absolute right-10 top-10 z-50">
       {/* this hidden checkbox controls the state */}
       <input type="checkbox" className="theme-controller" value="synthwave" />
 

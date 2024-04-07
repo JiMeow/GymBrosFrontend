@@ -8,7 +8,7 @@ type UserLayoutProps = {
 
 const UserLayout: React.FC<UserLayoutProps> = ({ mainNode, currentPageId }) => {
   return (
-    <div className="relative z-50 min-h-[100vh] rounded-sm bg-base-200 text-black">
+    <div className="relative min-h-[100vh] rounded-sm bg-base-200 text-black">
       {mainNode}
       <BottomNav currentPageId={currentPageId} />
     </div>

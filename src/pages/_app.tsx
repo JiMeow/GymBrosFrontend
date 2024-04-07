@@ -26,24 +26,24 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <main className={fonts.className}>
       <NextUIProvider>
-        <QueryClientProvider client={queryClient}>
-          {isClient && (
-            <>
-              <html data-theme={theme} className="relative">
-                {/* TODO: Make this layout better wih store*/}
-                <ThemeController theme={theme} setTheme={setTheme} />
+        {isClient && (
+          <>
+            <html data-theme={theme} className="relative">
+              {/* TODO: Make this layout better wih store*/}
+              <ThemeController theme={theme} setTheme={setTheme} />
+              <QueryClientProvider client={queryClient}>
                 <Component {...pageProps} />
-                {process.env.NODE_ENV === "development" && <DevViewport />}
-              </html>
-            </>
-          )}
-          {!isClient && (
-            <>
-              <Component {...pageProps} />
+              </QueryClientProvider>
               {process.env.NODE_ENV === "development" && <DevViewport />}
-            </>
-          )}
-        </QueryClientProvider>
+            </html>
+          </>
+        )}
+        {!isClient && (
+          <>
+            <Component {...pageProps} />
+            {process.env.NODE_ENV === "development" && <DevViewport />}
+          </>
+        )}
       </NextUIProvider>
     </main>
   );

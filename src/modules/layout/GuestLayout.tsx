@@ -7,7 +7,7 @@ type GuestLayout = {
 
 const GuestLayout: React.FC<GuestLayout> = ({ mainNode, currentPageId }) => {
   // TODO: remove this console.log
-  console.log("GuestLayout", currentPageId);
+  console.log("Guest Layout", currentPageId);
 
   return <div>{mainNode}</div>;
 };

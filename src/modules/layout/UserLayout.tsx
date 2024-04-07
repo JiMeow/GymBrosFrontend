@@ -1,4 +1,5 @@
 import React from "react";
+import BottomNav from "../components/home/BottomNav";
 
 type UserLayoutProps = {
   mainNode?: React.ReactNode;
@@ -6,10 +7,12 @@ type UserLayoutProps = {
 };
 
 const UserLayout: React.FC<UserLayoutProps> = ({ mainNode, currentPageId }) => {
-  // TODO: remove this console.log
-  console.log("GuestLayout", currentPageId);
-
-  return <div>{mainNode}</div>;
+  return (
+    <div className="relative z-50 min-h-[100vh] rounded-sm bg-base-200 text-black">
+      {mainNode}
+      <BottomNav currentPageId={currentPageId} />
+    </div>
+  );
 };
 
 export default UserLayout;

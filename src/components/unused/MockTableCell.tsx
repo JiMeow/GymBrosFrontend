@@ -1,6 +1,6 @@
 import { useExerciseById } from "@/hooks/exercise/useExerciseById";
 import React from "react";
-import Card from "./Card";
+import Card from "../Card";
 
 type Props = {
   id: string;

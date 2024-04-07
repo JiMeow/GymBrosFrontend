@@ -3,8 +3,9 @@ import { IoMdFitness } from "react-icons/io";
 import React, { useEffect, useState } from "react";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/router";
+import { pages } from "@/modules/pageConfig";
 
-const Navbar = () => {
+const TopNav = () => {
   const rounter = useRouter();
   const [opacity, setOpacity] = useState(100);
 
@@ -19,7 +20,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`sticky left-0 top-0 z-50 m-auto flex w-full justify-between p-4 px-6 `}
+        className={`fixed left-0 top-0 z-50 m-auto flex w-full justify-between p-4 px-6 `}
         style={{
           backgroundColor: `rgba(148, 145, 145,${opacity / 100})`,
           transition: "all 0.5s ease",
@@ -33,7 +34,7 @@ const Navbar = () => {
             className="rounded-full bg-black px-2 py-2 text-white hover:bg-white hover:text-black"
             startContent={<IoMdFitness />}
             onClick={() => {
-              void rounter.push("/login");
+              void rounter.push(pages.login.path);
             }}
           >
             Log In
@@ -42,7 +43,7 @@ const Navbar = () => {
             className="rounded-full bg-black px-2 py-2 text-white hover:bg-white hover:text-black"
             startContent={<IoPersonCircleOutline />}
             onClick={() => {
-              void rounter.push("/signup");
+              void rounter.push(pages.register.path);
             }}
           >
             Sign up
@@ -53,4 +54,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default TopNav;

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Tabs, Tab } from "@nextui-org/react";
-import Table from "@/components/MockTable";
+import Table from "@/components/unused/MockTable";
 import { useIsVisible } from "@/hooks/useIsVisible";
 
 const tabs = [

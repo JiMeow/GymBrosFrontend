@@ -10,7 +10,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="-z-50 h-[100vh] rounded-sm bg-base-200">
+      <div className="-z-50 h-[100dvh] rounded-sm bg-base-200">
         <div className="flex h-full flex-col items-center justify-center gap-4">
           <div className="mb-4 text-3xl font-bold">Sign up for GymsBro</div>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BottomNav from "../components/home/BottomNav";
+import BottomNav from "../components/user/BottomNav";
 
 type UserLayoutProps = {
   mainNode?: React.ReactNode;
@@ -8,7 +8,7 @@ type UserLayoutProps = {
 
 const UserLayout: React.FC<UserLayoutProps> = ({ mainNode, currentPageId }) => {
   return (
-    <div className="relative min-h-[100vh] rounded-sm bg-base-200 text-black">
+    <div className="relative min-h-[100dvh] rounded-sm bg-base-200 text-black">
       {mainNode}
       <BottomNav currentPageId={currentPageId} />
     </div>

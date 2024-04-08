@@ -19,7 +19,7 @@ const HomeCard: React.FC<HomeCardProps> = ({
       className={twMerge("card w-full bg-base-100 shadow-xl", className ?? "")}
     >
       <div className="card-body w-full">
-        <div className="flex w-full flex-row justify-center gap-2 text-2xl font-bold text-content1-foreground">
+        <div className="flex w-full flex-row justify-center gap-1 text-xl font-bold text-content1-foreground">
           <span>{title1}</span>
           <span className="text-accent">{title2}</span>
         </div>

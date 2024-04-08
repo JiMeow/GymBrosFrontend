@@ -10,10 +10,13 @@ const UserHome = () => {
         <div className="flex flex-row items-center justify-between">
           {/* left component */}
           <div>
-            <span className="ml-2 text-2xl font-bold text-content1-foreground">
+            <span className="ml-2 text-[24px] font-bold text-content1-foreground">
               Welcome Back
             </span>
-            <span className="ml-4 text-3xl font-bold text-accent">User</span>
+            {/* TODO: Change to user data */}
+            <span className="ml-4 text-2xl font-bold text-accent">
+              {"JiMeow".length > 6 ? "JiMeow".substring(0, 6) + ".." : "JiMeow"}
+            </span>
           </div>
           {/* right component */}
           <div className="avatar">

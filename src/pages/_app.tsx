@@ -1,7 +1,7 @@
 import { type Session } from "next-auth";
 import { type AppType } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
-import { DM_Sans, Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "@/styles/globals.css";

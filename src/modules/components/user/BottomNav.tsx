@@ -10,7 +10,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ currentPageId }) => {
   const rounter = useRouter();
 
   return (
-    <div className="btm-nav">
+    <div className="btm-nav h-[8dvh]">
       {[pages.food, pages.home, pages.workout].map((page) => (
         <button
           key={page.id}

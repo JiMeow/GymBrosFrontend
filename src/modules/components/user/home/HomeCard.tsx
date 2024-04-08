@@ -1,5 +1,5 @@
 import React from "react";
-import { twMerge } from "tailwind-merge";
+import UserCard from "@/modules/components/user/UserCard";
 
 type HomeCardProps = {
   title1: string;
@@ -15,17 +15,15 @@ const HomeCard: React.FC<HomeCardProps> = ({
   className,
 }) => {
   return (
-    <div
-      className={twMerge("card w-full bg-base-100 shadow-xl", className ?? "")}
-    >
+    <UserCard className={className}>
       <div className="card-body w-full">
         <div className="flex w-full flex-row justify-center gap-1 text-xl font-bold text-content1-foreground">
           <span>{title1}</span>
-          <span className="text-accent">{title2}</span>
+          <span className="text-highlight">{title2}</span>
         </div>
         <div>{children}</div>
       </div>
-    </div>
+    </UserCard>
   );
 };
 

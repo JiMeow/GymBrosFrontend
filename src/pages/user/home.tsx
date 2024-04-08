@@ -6,7 +6,7 @@ import React from "react";
 const UserHome = () => {
   return (
     <AppLayout layoutType="user" currentPageId="home">
-      <div className="flex h-[100dvh] w-[100vw] flex-col gap-12 bg-base-300 p-8 py-12">
+      <div className="flex min-h-[92dvh] w-full flex-col gap-12 bg-base-300 p-8 py-12">
         <div className="flex flex-row items-center justify-between">
           {/* left component */}
           <div>
@@ -14,7 +14,7 @@ const UserHome = () => {
               Welcome Back
             </span>
             {/* TODO: Change to user data */}
-            <span className="ml-4 text-2xl font-bold text-accent">
+            <span className="text-highlight ml-4 text-2xl font-bold">
               {"JiMeow".length > 6 ? "JiMeow".substring(0, 6) + ".." : "JiMeow"}
             </span>
           </div>
@@ -30,10 +30,10 @@ const UserHome = () => {
             </div>
           </div>
         </div>
-        <HomeCard title1="Workout" title2="Goal" className="h-[36%]">
+        <HomeCard title1="Workout" title2="Goal" className="h-[32dvh]">
           {/* TODO: Add Dashboard */}
         </HomeCard>
-        <HomeCard title1="Food" title2="Goal" className="h-[36%]">
+        <HomeCard title1="Food" title2="Goal" className="h-[32dvh]">
           {/* TODO: Add Dashboard */}
         </HomeCard>
       </div>
